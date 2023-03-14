@@ -1,6 +1,6 @@
 # Statmania
 
-Displays statistics about your performance on the while racing
+Displays statistics about your performance while racing
 
 ### Features
 - Display various statistics about finish times
