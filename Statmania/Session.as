@@ -237,9 +237,7 @@ class Session {
     }
 
     void readPersistentFile() {
-        string folderLocation = IO::FromDataFolder("") + "Statmania";
-
-        string jsonFile = folderLocation + "/" + mapId + ".json";
+        string jsonFile = IO::FromStorageFolder(mapId + ".json");
 
         if (IO::FileExists(jsonFile)) {
             auto json = Json::FromFile(jsonFile);
@@ -272,13 +270,9 @@ class Session {
 
             auto content = collectJsonContent();
 
-            string folderLocation = IO::FromDataFolder("") + "Statmania";
-
-            if (!IO::FolderExists(folderLocation)) IO::CreateFolder(folderLocation);
-
             string jsonFile = "";
-            if (toSessionFile) jsonFile = folderLocation + "/" + mapId + "_" + Time::FormatString("%Y%m%dT%H%M%S", Time::get_Stamp()) + ".json";
-            else jsonFile = folderLocation + "/" + mapId + ".json";
+            if (toSessionFile) jsonFile = IO::FromStorageFolder(mapId + "_" + Time::FormatString("%Y%m%dT%H%M%S", Time::get_Stamp()) + ".json");
+            else jsonFile = IO::FromStorageFolder(mapId + ".json");
 
             print("Wrote session file to " + jsonFile);
 
