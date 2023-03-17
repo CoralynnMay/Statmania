@@ -2,7 +2,7 @@
 name        = "Statmania"
 author      = "CoralynnMay"
 category    = "Overlay"
-version     = "0.1.1"
+version     = "0.1.2"
 
 [script]
 dependencies = ["PlayerState"]
