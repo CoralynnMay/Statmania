@@ -10,10 +10,10 @@ void PaceDataRender() {
             UI::BeginTable("header",1,UI::TableFlags::SizingFixedFit);
                 UI::TableNextRow();
                 UI::TableNextColumn();
-                UI::Text("\\$ddd" + GLB_session.mapName);
+                UI::Text("\\$ddd" + ColoredString(GLB_session.mapName));
                 UI::TableNextRow();
                 UI::TableNextColumn();
-                UI::Text("\\$888" + GLB_session.authorName);
+                UI::Text("\\$888" + ColoredString(GLB_session.authorName));
             UI::EndTable();
         }
         UI::BeginTabBar("StatmaniaTabs", UI::TabBarFlags::NoCloseWithMiddleMouseButton);

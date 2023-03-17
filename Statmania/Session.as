@@ -227,8 +227,8 @@ class Session {
 
             content["FinishTimes"] = jsonFinishTimes;
             content["LastSavedAt"] = Text::Format("%0d", Time::get_Stamp());
-            content["MapName"] = mapName;
-            content["Author"] = authorName;
+            content["MapName"] = StripFormatCodes(mapName);
+            content["Author"] = StripFormatCodes(authorName);
             content["MapId"] = mapId;
 
             content["StatmaniaJsonVersion"] = 1;
